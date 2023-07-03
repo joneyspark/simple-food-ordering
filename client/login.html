@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery - Home</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" href="images/shopping-bag-icon.png">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 border-bottom">
+
+        <div class="container">
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0 flex-sm-grow-0 flex-grow-1" href="index.html">
+                <!-- <img src="assets/images/logo.webp" alt="site icon"> -->
+                <span class="logo-text text-uppercase flex-grow-1"><i class="fas fa-utensils"></i> FOOD HUB</span>
+            </a>
+
+            <div class="order-lg-2 nav-btns">
+                <a href="cart.html">
+                    <button type="button" class="btn position-relative">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary"></span>
+                    </button>
+                </a>
+                <a href="login.html">
+                    <button type="button" class="btn position-relative">
+                        <i class="fa fa-user-plus"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary"></span>
+                    </button>
+                </a>
+
+            </div>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse order-lg-1 food-hub-menu" id="navMenu">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="about.html">About us</a>
+                    </li>
+
+                    <li class="nav-item px-2 py-2 border-0">
+                        <a class="nav-link text-uppercase text-dark" href="contact.html">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end of navbar -->
+
+    <div class="section-gap"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="offset-sm-3 col-12 col-sm-6">
+                <div class="login-registration">
+                    <h3 class="text-center login-title">Login</h3>
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                placeholder="Enter Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" aria-describedby="nameHelp"
+                                placeholder="Password">
+                        </div>
+
+                        <button type="submit" class="btn submit-btn">Login</button>
+                    </form>
+                    <a href="registration.html" class="registration-txt">Or Create a New Account?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-gap"></div>
+
+    <!-- Footer  -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-4">
+                    <span class="logo-text footer-logo text-uppercase"><i class="fas fa-utensils"></i> FOOD HUB</span>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, est voluptas? Deleniti
+                        deserunt distinctio reiciendis veniam totam aspernatur ex illum et vel quae, iste, iusto
+                        assumenda aliquam necessitatibus natus laudantium?</p>
+                    <div class="opening d-flex">
+                        <span><i class="fas fa-clock"></i></span>
+                        <div>
+                            <b>Opening Hours</b>
+                            <p>Mon-Sun</p>
+                            <p>7am - 10pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-2">
+                    <h4>About us</h4>
+                    <div class="footer-link">
+                        <a href="#">Menu</a>
+                        <a href="#">About us</a>
+                        <a href="#">Features</a>
+                        <a href="#">FAQs</a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-2">
+                    <h4>Company</h4>
+                    <div class="footer-link">
+                        <a href="#">Why us</a>
+                        <a href="#">Gallery</a>
+                        <a href="#">Partner with us</a>
+                        <a href="#">Feedback</a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <h4>Contact us</h4>
+                    <div class="contact-footer">
+                        <p>(44) 555-0122</p>
+                        <p>(44) 555-0122</p>
+                        <p>customerservice@email.com</p>
+                        <p>First Floor Flat, 115A Coldharbour Road, Birmingham, B11AB</p>
+                    </div>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Footer  -->
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.6.0.js"></script>
+    <!-- isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- bootstrap js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery - Home</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" href="images/shopping-bag-icon.png">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 border-bottom">
+
+        <div class="container">
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0 flex-sm-grow-0 flex-grow-1"
+                href="index.html">
+                <!-- <img src="assets/images/logo.webp" alt="site icon"> -->
+                <span class="logo-text text-uppercase flex-grow-1"><i class="fas fa-utensils"></i> FOOD HUB</span>
+            </a>
+
+            <div class="order-lg-2 nav-btns">
+                <a href="cart.html">
+                    <button type="button" class="btn position-relative">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary"></span>
+                    </button>
+                </a>
+                <a href="login.html">
+                    <button type="button" class="btn position-relative">
+                        <i class="fa fa-user-plus"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary"></span>
+                    </button>
+                </a>
+
+            </div>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse order-lg-1 food-hub-menu" id="navMenu">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="about.html">About us</a>
+                    </li>
+
+                    <li class="nav-item px-2 py-2 border-0">
+                        <a class="nav-link text-uppercase text-dark" href="contact.html">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- Hero slider section -->
+    <div id="carouselExampleIndicators" class="carousel carousel-dark slide bg-light" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner container">
+            <div class="carousel-item active">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-sm-7 pr-2">
+                        <div class="slider-content">
+                            <h1 class="hero-heading text-responsive-slider-title">Give your test bud good sensation</h1>
+                            <p class="text-responsive-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Molestias sunt esse enim error
+                                provident aspernatur pariatur, beatae dicta nisi accusantium? Amet aliquam eligendi
+                                placeat
+                                cum id temporibus, fuga doloremque voluptas.</p>
+                            <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5 order-sm-last order-first">
+                        <img class="img-fluid" src="assets/images/banner-img.png" alt="Banner image">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-sm-7 pr-2">
+                        <div class="slider-content">
+                            <h1 class="hero-heading text-responsive-slider-title">Explore your Japanese Satue
+                                traditional food</h1>
+                            <p class="text-responsive-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Molestias sunt esse enim error
+                                provident aspernatur pariatur, beatae dicta nisi accusantium? Amet aliquam eligendi
+                                placeat
+                                cum id temporibus, fuga doloremque voluptas.</p>
+                            <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5 order-sm-last order-first">
+                        <img class="img-fluid" src="assets/images/banner-image-2.webp" alt="Banner image">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-sm-7 pr-2">
+                        <div class="slider-content">
+                            <h1 class="hero-heading text-responsive-slider-title">TOFU CHEESE - Naturally Brewed Cheese
+                            </h1>
+                            <p class="text-responsive-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Molestias sunt esse enim error
+                                provident aspernatur pariatur, beatae dicta nisi accusantium? Amet aliquam eligendi
+                                placeat
+                                cum id temporibus, fuga doloremque voluptas.</p>
+                            <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5 order-sm-last order-first">
+                        <img class="img-fluid" src="assets/images/banner-image-3.webp" alt="Banner image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Hero slider section -->
+    <div class="section-gap"></div>
+    <!-- Information box section -->
+    <div class="information-section">
+        <div class="container">
+            <div class="row">
+                <div class="offset-sm-1 col-12 col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body text-center">
+                            <span><i class="fas fa-clock"></i></span>
+                            <h5 class="card-title">Monday - Sunday</h5>
+                            <p class="card-text">9am - 7pm</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body text-center">
+                            <span><i class="fas fa-map"></i></span>
+                            <h5 class="card-title">115A Coldharbour Road</h5>
+                            <p class="card-text">Open Map</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body text-center">
+                            <span><i class="fas fa-phone"></i></span>
+                            <h5 class="card-title">(44) 555-0122</h5>
+                            <p class="card-text">Give us a call</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Information box section -->
+    <div class="section-gap"></div>
+
+    <!-- Men collection -->
+    <section id="collection" class="py-5">
+        <div class="container">
+            <div class="title text-center">
+                <h1 class="position-relative d-inline-block section-heading">Food Menu</h1>
+            </div>
+
+            <div class="row g-0">
+                <div class="d-flex flex-wrap justify-content-center mt-5 filter-button-group">
+                    <button type="button" class="btn m-2 active-filter-btn" data-filter="*">All</button>
+                    <button type="button" class="btn m-2" data-filter=".seafood">Seafood</button>
+                    <button type="button" class="btn m-2" data-filter=".grill">Grill</button>
+                    <button type="button" class="btn m-2" data-filter=".pasta">Pasta</button>
+
+                    <button type="button" class="btn m-2" data-filter=".snacks">Snacks</button>
+
+                    <button type="button" class="btn m-2" data-filter=".chinese">Chinese</button>
+                </div>
+
+                <div class="collection-list mt-4 row gx-0 gy-3">
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 seafood">
+                        <div class="card menu-card">
+                            <div class="collection-img position-relative">
+                                <img src="assets/images/food-img-1.png" class="w-100">
+
+                            </div>
+                            <div class="px-3 py-3">
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                                <p class="text-capitalize my-1">Swiss chard pasta</p>
+                                <small>Stirfry pasta, chicken wings</small>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-normal">£25.00</span>
+                                    <button class="btn add-to-cart-btn-plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 seafood">
+                        <div class="card menu-card">
+                            <div class="collection-img position-relative">
+                                <img src="assets/images/food-img-1.png" class="w-100">
+
+                            </div>
+                            <div class="px-3 py-3">
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                                <p class="text-capitalize my-1">Swiss chard pasta</p>
+                                <small>Stirfry pasta, chicken wings</small>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-normal">£25.00</span>
+                                    <button class="btn add-to-cart-btn-plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 grill">
+                        <div class="card menu-card">
+                            <div class="collection-img position-relative">
+                                <img src="assets/images/food-img-1.png" class="w-100">
+
+                            </div>
+                            <div class="px-3 py-3">
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                                <p class="text-capitalize my-1">Swiss chard pasta</p>
+                                <small>Stirfry pasta, chicken wings</small>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-normal">£25.00</span>
+                                    <button class="btn add-to-cart-btn-plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 pasta">
+                        <div class="card menu-card">
+                            <div class="collection-img position-relative">
+                                <img src="assets/images/food-img-1.png" class="w-100">
+
+                            </div>
+                            <div class="px-3 py-3">
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                                <p class="text-capitalize my-1">Swiss chard pasta</p>
+                                <small>Stirfry pasta, chicken wings</small>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-normal">£25.00</span>
+                                    <button class="btn add-to-cart-btn-plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 snacks">
+                        <div class="card menu-card">
+                            <div class="collection-img position-relative">
+                                <img src="assets/images/food-img-1.png" class="w-100">
+
+                            </div>
+                            <div class="px-3 py-3">
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                                <p class="text-capitalize my-1">Swiss chard pasta</p>
+                                <small>Stirfry pasta, chicken wings</small>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-normal">£25.00</span>
+                                    <button class="btn add-to-cart-btn-plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 chinese">
+                        <div class="card menu-card">
+                            <div class="collection-img position-relative">
+                                <img src="assets/images/food-img-1.png" class="w-100">
+
+                            </div>
+                            <div class="px-3 py-3">
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                                <p class="text-capitalize my-1">Swiss chard pasta</p>
+                                <small>Stirfry pasta, chicken wings</small>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-normal">£25.00</span>
+                                    <button class="btn add-to-cart-btn-plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of Men collection -->
+
+    <div class="section-gap"></div>
+
+    <!-- Best seller section -->
+    <section id="best-seller">
+        <div class="container">
+            <div class="title text-center">
+                <h1 class="position-relative d-inline-block section-heading">Our Best Sellers</h1>
+                <p>Checkout the best-selling dishes on our menu that our customer are going crazy over</p>
+            </div>
+            <div class="section-gap"></div>
+            <div class="row align-items-center">
+                <div class="offset-sm-1 col-sm-5 col-12">
+                    <img src="assets/images/banner-image-2.webp" alt="best selling food">
+                </div>
+                <div class="col-sm-5 col-12">
+                    <div class="slider-content">
+                        <h1 class="section-heading">Cheesy Pasta Salad</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sunt esse enim error
+                            provident aspernatur pariatur, beatae dicta nisi accusantium.</p>
+                        <p class="fs-3 fw-normal">£25.00</p>
+                        <div class="d-flex align-items-center">
+
+                            <button class="btn add-to-cart-btn-plus seller-icon"><i class="fas fa-plus"></i></button>
+                            <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="section-gap"></div>
+            <div class="row align-items-center">
+                <div class="offset-sm-1 col-sm-5 col-12">
+                    <div class="slider-content">
+                        <h1 class="section-heading">Cheesy Pasta Salad</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sunt esse enim error
+                            provident aspernatur pariatur, beatae dicta nisi accusantium.</p>
+                        <p class="fs-3 fw-normal">£25.00</p>
+                        <div class="d-flex align-items-center">
+
+                            <button class="btn add-to-cart-btn-plus seller-icon"><i class="fas fa-plus"></i></button>
+                            <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-5 col-12">
+                    <img src="assets/images/banner-image-2.webp" alt="best selling food">
+                </div>
+            </div>
+            <div class="section-gap"></div>
+            <div class="row align-items-center">
+                <div class="offset-sm-1 col-sm-5 col-12">
+                    <img src="assets/images/banner-image-2.webp" alt="best selling food">
+                </div>
+                <div class="col-sm-5 col-12">
+                    <div class="slider-content">
+                        <h1 class="section-heading">Cheesy Pasta Salad</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sunt esse enim error
+                            provident aspernatur pariatur, beatae dicta nisi accusantium.</p>
+                        <p class="fs-3 fw-normal">£25.00</p>
+                        <div class="d-flex align-items-center">
+
+                            <button class="btn add-to-cart-btn-plus seller-icon"><i class="fas fa-plus"></i></button>
+                            <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Best seller section -->
+    <div class="section-gap"></div>
+    <!-- how it works -->
+    <section id="how-it-works">
+        <div class="container">
+            <div class="title text-center">
+                <h1 class="position-relative d-inline-block section-heading">How it Works</h1>
+            </div>
+            <div class="section-gap"></div>
+            <div class="row">
+                <div class="col-12 col-sm-3">
+                    <div class="card how-work-card" style="width: 18rem;">
+                        <div class="card-body text-center">
+                            <span><i class="far fa-calendar-check"></i></span>
+                            <h5 class="card-title">Choose a meal</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ipsam
+                                harum esse quia fugit facere</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-3">
+                    <div class="card how-work-card" style="width: 18rem;">
+                        <div class="card-body text-center">
+                            <span>
+                                <i class="far fa-money-bill-alt"></i>
+                            </span>
+                            <h5 class="card-title">Make Payment</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ipsam
+                                harum esse quia fugit facere</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-3">
+                    <div class="card how-work-card" style="width: 18rem;">
+                        <div class="card-body text-center">
+                            <span><i class="fas fa-truck"></i></span>
+                            <h5 class="card-title">Delivery</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ipsam
+                                harum esse quia fugit facere</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-3">
+                    <div class="card how-work-card" style="width: 18rem;">
+                        <div class="card-body text-center">
+                            <span><i class="fas fa-box"></i></span>
+                            <h5 class="card-title">Receive Package</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ipsam
+                                harum esse quia fugit facere</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End how it works -->
+    <div class="section-gap"></div>
+    <!-- customer reviews -->
+    <section id="customer-reivew">
+        <div class="container">
+            <div class="title text-center">
+                <h1 class="position-relative d-inline-block section-heading">Customer Reviews</h1>
+            </div>
+            <div class="section-gap"></div>
+            <div class="row">
+                <div class="offset-sm-1 col-12 col-sm-5">
+                    <div class="card how-work-card review-card">
+                        <div class="card-body">
+                            <div class="customer-info d-flex align-items-center">
+                                <img src="assets/images/user-1.png" width="80" height="80" alt="">
+                                <div>
+                                    <h4>Arifur Rahman</h4>
+                                    <small>Lekki, Nigeria</small>
+                                    <div class="rating">
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et in
+                                voluptates hic minus. Quas reiciendis nulla reprehenderit ad officia placeat aliquam
+                                praesentium. Quas hic, incidunt pariatur saepe excepturi iste sunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-5">
+                    <div class="card how-work-card review-card">
+                        <div class="card-body">
+                            <div class="customer-info d-flex align-items-center">
+                                <img src="assets/images/user-1.png" width="80" height="80" alt="">
+                                <div>
+                                    <h4>Joney Spark</h4>
+                                    <small>Lekki, Nigeria</small>
+                                    <div class="rating">
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et in
+                                voluptates hic minus. Quas reiciendis nulla reprehenderit ad officia placeat aliquam
+                                praesentium. Quas hic, incidunt pariatur saepe excepturi iste sunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- end customer reviews -->
+    <div class="section-gap"></div>
+
+    <!-- contact us -->
+    <section id="contact">
+        <div class="container">
+            <div class="title text-center">
+                <h1 class="position-relative d-inline-block section-heading">Contact us</h1>
+            </div>
+            <div class="section-gap"></div>
+
+            <div class="row" id="contact-form">
+                <div class="offset-sm-1 col-12 col-sm-5">
+                    <form class="contact-form" @submit.prevent="checkForm">
+                        <div class="mb-3">
+                            <label for="exampleInputname" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="exampleInputname" aria-describedby="nameHelp"
+                                placeholder="Enter Your Full Name" v-model="name">
+                            <small class="text-danger" v-if="errors.name">
+                                {{errors.name}}
+                            </small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter Your Email" v-model="email">
+                            <small class="text-danger" v-if="errors.email">
+                                {{errors.email}}
+                            </small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Message</label>
+                            <textarea cols="30" rows="8" class="form-control" id="validationTextarea"
+                                placeholder="Write here..." v-model="message"></textarea>
+                            <small class="text-danger" v-if="errors.message">
+                                {{errors.message}}
+                            </small>
+                        </div>
+                        <button type="submit" class="btn submit-btn">Submit message</button>
+                    </form>
+                </div>
+                <div class="offset-sm-1 col-12 col-sm-5">
+                    <div class="contact-info">
+                        <h5>Phone Number</h5>
+                        <p>(44) 555-0122</p>
+                        <p>(44) 555-0122</p>
+                    </div>
+                    <div class="contact-info">
+                        <h5>Email</h5>
+                        <p>customerservice@email.com</p>
+                    </div>
+
+                    <div class="contact-info">
+                        <h5>Address</h5>
+                        <p>First Floor Flat, 115A Coldharbour Road, Birmingham, B11AB</p>
+                        <img src="assets/images/b-map.png" alt="map-img">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end contact us -->
+    <div class="section-gap"></div>
+
+    <!-- newsletter section -->
+    <section id="newsletter">
+        <div class="container">
+            <div class="title text-center">
+                <h1 class="position-relative d-inline-block section-heading">Subscribe To Our Newsletter</h1>
+                <p>Be the first to get notified about our amazing services and offers</p>
+
+                <form class="contact-form">
+                    <div class="row">
+                        <div class="offset-sm-3 col-12 col-sm-6">
+                            <div class="subscribe-form d-sm-flex">
+                                <input type="email" class="form-control" id="exampleInputname"
+                                    aria-describedby="nameHelp" placeholder="Enter Your email address">
+                                <button type="submit" class="btn subscribe-btn">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- end newsletter section -->
+    <div class="section-gap"></div>
+
+    <!-- Footer  -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-4">
+                    <span class="logo-text footer-logo text-uppercase"><i class="fas fa-utensils"></i> FOOD HUB</span>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, est voluptas? Deleniti
+                        deserunt distinctio reiciendis veniam totam aspernatur ex illum et vel quae, iste, iusto
+                        assumenda aliquam necessitatibus natus laudantium?</p>
+                    <div class="opening d-flex">
+                        <span><i class="fas fa-clock"></i></span>
+                        <div>
+                            <b>Opening Hours</b>
+                            <p>Mon-Sun</p>
+                            <p>7am - 10pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-2">
+                    <h4>About us</h4>
+                    <div class="footer-link">
+                        <a href="#">Menu</a>
+                        <a href="#">About us</a>
+                        <a href="#">Features</a>
+                        <a href="#">FAQs</a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-2">
+                    <h4>Company</h4>
+                    <div class="footer-link">
+                        <a href="#">Why us</a>
+                        <a href="#">Gallery</a>
+                        <a href="#">Partner with us</a>
+                        <a href="#">Feedback</a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <h4>Contact us</h4>
+                    <div class="contact-footer">
+                        <p>(44) 555-0122</p>
+                        <p>(44) 555-0122</p>
+                        <p>customerservice@email.com</p>
+                        <p>First Floor Flat, 115A Coldharbour Road, Birmingham, B11AB</p>
+                    </div>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Footer  -->
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.6.0.js"></script>
+    <!-- isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- bootstrap js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/form.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
