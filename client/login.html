@@ -22,7 +22,8 @@
 
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="icon" href="images/shopping-bag-icon.png">
+    <link rel="icon" href="assets/images/favicon.png">
+    <script src="assets/js/vue.global.js"></script>
 </head>
 
 <body>
@@ -81,18 +82,24 @@
     <div class="container">
         <div class="row">
             <div class="offset-sm-3 col-12 col-sm-6">
-                <div class="login-registration">
+                <div class="login-registration" id="login-form">
                     <h3 class="text-center login-title">Login</h3>
-                    <form class="contact-form">
+                    <form class="contact-form" @submit.prevent="loginForm">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                                 placeholder="Enter Your Email">
+                                <small class="text-danger" v-if="errors.email">
+                                    {{errors.email}}
+                                </small>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" aria-describedby="nameHelp"
                                 placeholder="Password">
+                                <small class="text-danger" v-if="errors.password">
+                                    {{errors.password}}
+                                </small>
                         </div>
 
                         <button type="submit" class="btn submit-btn">Login</button>
@@ -111,9 +118,7 @@
                 <div class="col-12 col-sm-4">
                     <span class="logo-text footer-logo text-uppercase"><i class="fas fa-utensils"></i> FOOD HUB</span>
                     <br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, est voluptas? Deleniti
-                        deserunt distinctio reiciendis veniam totam aspernatur ex illum et vel quae, iste, iusto
-                        assumenda aliquam necessitatibus natus laudantium?</p>
+                    <p>Welcome to Food Hub, the go-to online platform for all your culinary needs. Whether you're a passionate foodie, an aspiring home cook, or simply looking for a new dining experience, Food Hub has got you covered. </p>
                     <div class="opening d-flex">
                         <span><i class="fas fa-clock"></i></span>
                         <div>
@@ -168,6 +173,7 @@
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- custom js -->
+    <script src="assets/js/form.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 

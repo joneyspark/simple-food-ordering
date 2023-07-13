@@ -1,0 +1,174 @@
+a.nav-link i {
+    color: #344667;
+}
+
+a.nav-link.active i {
+    color: #ffffff;
+}
+
+ul.dropdown-menu-custom {
+    margin-left: 35px;
+}
+
+.navbar-vertical .navbar-nav .nav-item .collapse .nav .nav-item .nav-link.active:before {
+    background: rgb(170 34 176);
+}
+
+.custom-add-icon-btn {
+    transform: translate(0px, 24px);
+}
+
+.custom-add-icon-btn.btn:hover:not(.btn-icon-only) {
+    transform: translateY(20px);
+}
+
+.custom-divider {
+    margin-top: 2.2rem;
+}
+
+.table thead th {
+    padding: 0.75rem 0.5rem;
+}
+
+span.input-group-text.custom-group-text-total-sale {
+    background-color: #eaecef;
+}
+
+.custom-sec-title-form {
+    background-color: #fff3e2;
+    display: inline-block;
+    padding: 0px 7px;
+    border-radius: 15px;
+}
+
+.custom-icon-padding {
+    padding-right: 5px;
+}
+
+.logout-form-style {
+    margin: 0;
+}
+
+a.custom-edit-icon-style:hover i {
+    color: #00b700;
+}
+
+a.custom-delete-icon-style:hover i {
+    color: red;
+}
+
+.dashed-borderd {
+    border-bottom: dashed;
+    border-color: #ddd;
+    padding: 0px 0px 10px 0px;
+}
+
+.custom-margin-left-15x {
+    margin-left: 15px;
+}
+
+.custom-square {
+    position: relative;
+}
+
+.custom-square:before {
+    position: absolute;
+    content: '';
+    width: 7px;
+    height: 7px;
+    background-image: linear-gradient(310deg, #7928ca, #ff0080);
+    box-shadow: 0 4px 7px -1px rgb(0 0 0 / 11%), 0 2px 4px -1px rgb(0 0 0 / 7%);
+    background-size: 150%;
+    background-position-x: 25%;
+    left: -15px;
+    top: 35%;
+    border-radius: 50%;
+}
+
+.custom-square-primary:before {
+    background-image: linear-gradient(310deg, #7928ca, #ff0080);
+}
+
+.custom-square-secondary:before {
+    background-image: linear-gradient(310deg, #627594, #a8b8d8)
+}
+
+.custom-square-info:before {
+    background-image: linear-gradient(310deg, #2152ff, #21d4fd)
+}
+
+.custom-square-success:before {
+    background-image: linear-gradient(310deg, #17ad37, #98ec2d)
+}
+
+.custom-square-danger:before {
+    background-image: linear-gradient(310deg, #ea0606, #ff667c)
+}
+
+.custom-square-warning:before {
+    background-image: linear-gradient(310deg, #f53939, #fbcf33)
+}
+
+.list-wrapper {
+    font-size: .85rem;
+}
+
+.stock-card {
+    height: 275px;
+    overflow: scroll;
+}
+
+ul.custom-nav-style li:after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 25px;
+    background: #d9d8d8;
+    bottom: 5px;
+    right: -7px;
+}
+
+ul.custom-nav-style li {
+    margin-left: 10px;
+    position: relative;
+    padding: 0 5px;
+}
+
+@media (max-width: 767.98px) {
+    ul.custom-nav-style {
+        justify-content: center;
+        border-top: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        padding: 10px 0;
+    }
+
+    .this-week-sales-wrap {
+        flex-direction: column;
+    }
+
+    .row.sales-overview-wrap {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .card.employee-card {
+        margin: 0 !important;
+    }
+
+    .employee-line-padd {
+        padding-bottom: 10;
+    }
+
+    .container.login-blade-style {
+        padding: 0;
+    }
+
+    .custom-p-m-login {
+        padding: 0;
+    }
+
+    .container-fluid.py-1.px-3.custom-nav-style {
+        flex-direction: column-reverse;
+    }
+
+}

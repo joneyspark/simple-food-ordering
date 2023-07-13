@@ -22,7 +22,8 @@
 
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="icon" href="images/shopping-bag-icon.png">
+    <link rel="icon" href="assets/images/favicon.png">
+    <script src="assets/js/vue.global.js"></script>
 </head>
 
 <body>
@@ -30,7 +31,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 border-bottom">
 
         <div class="container">
-            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0 flex-sm-grow-0 flex-grow-1" href="index.html">
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0 flex-sm-grow-0 flex-grow-1"
+                href="index.html">
                 <!-- <img src="assets/images/logo.webp" alt="site icon"> -->
                 <span class="logo-text text-uppercase flex-grow-1"><i class="fas fa-utensils"></i> FOOD HUB</span>
             </a>
@@ -79,23 +81,32 @@
     <div class="container">
         <div class="row">
             <div class="offset-sm-3 col-12 col-sm-6">
-                <div class="login-registration">
+                <div class="login-registration" id="registration-form">
                     <h3 class="text-center login-title">Registraion</h3>
-                    <form class="contact-form">
+                    <form class="contact-form" @submit.prevent="registrationForm">
                         <div class="mb-3">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Full Name</label>
                                 <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
                                     placeholder="Name">
+                                <small class="text-danger" v-if="errors.name">
+                                    {{errors.name}}
+                                </small>
                             </div>
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                                 placeholder="Enter Your Email">
+                            <small class="text-danger" v-if="errors.email">
+                                {{errors.email}}
+                            </small>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" aria-describedby="nameHelp"
                                 placeholder="Password">
+                            <small class="text-danger" v-if="errors.password">
+                                {{errors.password}}
+                            </small>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Confirm Password</label>
@@ -117,9 +128,7 @@
                 <div class="col-12 col-sm-4">
                     <span class="logo-text footer-logo text-uppercase"><i class="fas fa-utensils"></i> FOOD HUB</span>
                     <br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, est voluptas? Deleniti
-                        deserunt distinctio reiciendis veniam totam aspernatur ex illum et vel quae, iste, iusto
-                        assumenda aliquam necessitatibus natus laudantium?</p>
+                    <p>Welcome to Food Hub, the go-to online platform for all your culinary needs. Whether you're a passionate foodie, an aspiring home cook, or simply looking for a new dining experience, Food Hub has got you covered. </p>
                     <div class="opening d-flex">
                         <span><i class="fas fa-clock"></i></span>
                         <div>
@@ -175,6 +184,7 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- custom js -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/form.js"></script>
 </body>
 
 </html>

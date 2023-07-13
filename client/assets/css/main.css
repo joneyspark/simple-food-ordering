@@ -166,6 +166,7 @@ button.btn.add-to-cart-btn-plus.seller-icon {
 
 .customer-info img {
     margin-right: 15px;
+    border-radius: 50%;
 }
 
 .customer-info h4 {
@@ -371,6 +372,10 @@ button.checkout-btn {
 
 
 @media (max-width: 768px) {
+    .navbar-brand {
+        width: 100% !important;
+        display: block;
+    }
 
     span.logo-text {
         text-align: center;
