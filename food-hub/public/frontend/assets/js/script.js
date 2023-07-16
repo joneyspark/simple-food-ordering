@@ -16,19 +16,3 @@ function resetFilterBtns() {
     $(this).removeClass('active-filter-btn');
   });
 }
-
-// vue.js code
-
-
-createApp({
-  data() {
-      return {
-          message: 'Message'
-      }
-  },
-  methods: {
-      addToCart() {
-          console.log('Add to cart')
-      }
-  },
-}).mount('#app')

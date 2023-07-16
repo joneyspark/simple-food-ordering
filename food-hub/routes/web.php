@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\FoodItemController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -44,6 +46,10 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/users', [UserController::class, 'users'])->name('users');
+
+    // Food resoucres
+    Route::resource('foods', FoodItemController::class);
+    Route::resource('category', CategoryController::class);
 });
 
 // Employee routes

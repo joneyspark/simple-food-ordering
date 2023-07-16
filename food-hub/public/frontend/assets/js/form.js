@@ -117,4 +117,19 @@ createApp({
     },
 }).mount('#registration-form')
 
-console.log('Im form Form.js')
+// vue.js code
+
+
+createApp({
+    data() {
+        return {
+            message: 'Message'
+        }
+    },
+    methods: {
+        addToCart() {
+            console.log('Add to cart')
+        }
+    },
+  }).mount('#food-menu')
+  

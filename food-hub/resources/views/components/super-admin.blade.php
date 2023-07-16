@@ -8,8 +8,8 @@
               <p class="text-sm mb-0 text-capitalize font-weight-bold">Today Sales</p>
 
               <h5 class="font-weight-bolder mb-0">
-                £{{ $today_sales->today_total ? $today_sales->today_total : 0 }}
-                <span class="text-success text-xs font-weight-bolder">{{ $all_shops }} shops</span>
+                £120000
+                <span class="text-success text-xs font-weight-bolder">10 shops</span>
               </h5>
             </div>
           </div>
@@ -29,8 +29,9 @@
           <div class="col-8">
             <div class="numbers">
               <p class="text-sm mb-0 text-capitalize font-weight-bold">This Week Sales</p>
+
               <h5 class="font-weight-bolder mb-0">
-                £{{ $current_week_sales->current_week_total }}
+                £30000
 
               </h5>
             </div>
@@ -52,7 +53,7 @@
             <div class="numbers">
               <p class="text-sm mb-0 text-capitalize font-weight-bold">This Month Sales</p>
               <h5 class="font-weight-bolder mb-0">
-                £{{ $current_month_sales->current_month_total }}
+                £3000
               </h5>
             </div>
           </div>
@@ -73,7 +74,7 @@
             <div class="numbers">
               <p class="text-sm mb-0 text-capitalize font-weight-bold">This Year Sales</p>
               <h5 class="font-weight-bolder mb-0">
-                £{{ $current_year_sales->current_year_total }}
+                £3000
               </h5>
             </div>
           </div>
@@ -125,9 +126,9 @@
         <div class="card">
           <div class="card-body text-center">
             <h3 class="text-gradient text-primary"><span id="status1"
-                countto="21">£{{ $today_expense->today_expense ? $today_expense->today_expense : 0 }}</span></h3>
+                countto="21">£3000</span></h3>
             <h6 class="mb-0 font-weight-bolder">Today's Expenses</h6>
-            <p class="opacity-8 mb-0 text-sm">All Shops ({{ $all_shops }})</p>
+            <p class="opacity-8 mb-0 text-sm">All Shops £3000</p>
           </div>
         </div>
       </div>
@@ -135,10 +136,10 @@
         <div class="card">
           <div class="card-body text-center">
             <h3 class="text-gradient text-primary"><span id="status1"
-                countto="21">£{{ $current_week_expense->current_week_expense ? $current_week_expense->current_week_expense : 0 }}</span>
+                countto="21">£3000</span>
             </h3>
             <h6 class="mb-0 font-weight-bolder">Weekly Expenses</h6>
-            <p class="opacity-8 mb-0 text-sm">All Shops ({{ $all_shops }})</p>
+            <p class="opacity-8 mb-0 text-sm">All Shops £3000</p>
           </div>
         </div>
       </div>
@@ -148,10 +149,10 @@
         <div class="card">
           <div class="card-body text-center">
             <h3 class="text-gradient text-primary"><span id="status1"
-                countto="21">£{{ $current_month_expense->current_month_expense ? $current_month_expense->current_month_expense : 0 }}</span>
+                countto="21">£3000</span>
             </h3>
             <h6 class="mb-0 font-weight-bolder">Monthly Expenses</h6>
-            <p class="opacity-8 mb-0 text-sm">All Shops ({{ $all_shops }})</p>
+            <p class="opacity-8 mb-0 text-sm">All Shops £3000</p>
           </div>
         </div>
       </div>
@@ -159,10 +160,10 @@
         <div class="card">
           <div class="card-body text-center">
             <h3 class="text-gradient text-primary"><span id="status1"
-                countto="21">£{{ $current_year_expense->current_year_expense ? $current_year_expense->current_year_expense : 0 }}</span>
+                countto="21">£3000</span>
             </h3>
             <h6 class="mb-0 font-weight-bolder">Yearly Expenses</h6>
-            <p class="opacity-8 mb-0 text-sm">All Shops ({{ $all_shops }})</p>
+            <p class="opacity-8 mb-0 text-sm">All Shops £3000</p>
           </div>
         </div>
       </div>
@@ -173,7 +174,7 @@
       <div class="card-header pb-0 p-3">
         <div class="d-flex align-items-center">
           <h6 class="mb-0">Device Total Stock <span
-              class="badge bg-gradient-primary">{{ $stock_total->qty }}</span></h6>
+              class="badge bg-gradient-primary">£3000</span></h6>
           <button type="button"
             class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
             data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="See the device stock for all shop"
@@ -182,7 +183,7 @@
           </button>
         </div>
       </div>
-      <div class="card-body p-3 stock-card">
+      {{-- <div class="card-body p-3 stock-card">
         <div class="row">
           <div class="col-12">
             <div class="table-responsive">
@@ -204,21 +205,21 @@
                         <div class="d-flex px-2 py-0">
                           <span class="badge bg-gradient-primary me-3"> </span>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">{{ $item->item->item_name }}
+                            <h6 class="mb-0 text-sm">£3000
                             </h6>
                           </div>
                         </div>
                       </td>
                       <td>
-                        <span class="badge bg-gradient-secondary">{{ $item->item->memory->memory }}</span>
+                        <span class="badge bg-gradient-secondary">£3000</span>
                       </td>
                       <td>
                         <p class="opacity-8 mb-0 text-sm">
-                          {{ $item->shop->name }}
+                          £3000
                         </p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> {{ $item->qty }} </span>
+                        <span class="text-xs font-weight-bold"> £3000 </span>
                       </td>
                     </tr>
                   @endforeach
@@ -227,7 +228,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 </div>
@@ -242,7 +243,7 @@
 
         </div>
       </div>
-      <div class="card-body px-0 pb-2">
+      {{-- <div class="card-body px-0 pb-2">
         <div class="table-responsive">
           <table class="table align-items-center mb-0">
             <thead>
@@ -297,7 +298,7 @@
             </tbody>
           </table>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 </div>
@@ -333,9 +334,6 @@
 
 
 
-    var shopName = {!! json_encode($shop_name) !!}
-    var shopTotal = {!! json_encode($shop_total) !!}
-    var month_total = {!! json_encode($month_total) !!}
 
     window.onload = function() {
 

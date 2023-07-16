@@ -112,7 +112,7 @@
 
 <!-- Men collection -->
 <section id="collection" class="py-5">
-  <div class="container">
+  <div class="container" id="food-menu">
     <div class="title text-center">
       <h1 class="position-relative d-inline-block section-heading">Food Menu</h1>
     </div>

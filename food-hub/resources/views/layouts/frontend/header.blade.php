@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="vue-app">
 
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 border-bottom">
