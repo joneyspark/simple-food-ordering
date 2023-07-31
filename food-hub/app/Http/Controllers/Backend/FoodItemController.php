@@ -25,6 +25,20 @@ class FoodItemController extends Controller
         return view('layouts.food.index')->with(['foods' => $foods]);
     }
 
+    // api foods
+    public function foods()
+    {
+        $foods = FoodItem::with('category')
+            ->orderBy('name', 'asc')
+            ->get();
+            // ->paginate(10);
+
+            // return $foods;
+
+        return response($foods);
+        // return view('layouts.food.index')->with(['foods' => $foods]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

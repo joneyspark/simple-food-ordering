@@ -16,6 +16,9 @@
 
 /* jshint browser: true, strict: true, undef: true, unused: true */
 
+setTimeout(() => {
+  
+
 ( function( window, factory ) {
     // universal module definition
     /*jshint strict: false */ /* globals define, module, require */
@@ -3561,4 +3564,4 @@
   
   }));
   
-  
+}, 3000);

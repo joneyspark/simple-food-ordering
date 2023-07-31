@@ -318,6 +318,10 @@ button.checkout-btn {
     border: none;
     color: #000;
 }
+button.checkout-btn:hover {
+    background: #000;
+    color: #fff;
+}
 
 .item-card .card h5 {
     font-size: 16px;
@@ -416,4 +420,21 @@ button.checkout-btn {
     }
 
 
+}
+
+.header-cart {
+    position: relative;
+}
+
+span.item-counter {
+    position: absolute;
+    top: -15px;
+    background: #171717;
+    z-index: 2;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    width: 24px;
+    left: 20px;
 }

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->mediumText('ingredients');
             $table->text('description')->nullable();
             $table->integer('price');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->integer('rating');
             $table->timestamps();
         });

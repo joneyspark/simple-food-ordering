@@ -117,19 +117,4 @@ createApp({
     },
 }).mount('#registration-form')
 
-// vue.js code
-
-
-createApp({
-    data() {
-        return {
-            message: 'Message'
-        }
-    },
-    methods: {
-        addToCart() {
-            console.log('Add to cart')
-        }
-    },
-  }).mount('#food-menu')
   

@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Category;
+use App\Models\FoodItem;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Database\Seeders\ItemSeeder;
@@ -36,7 +38,24 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory(5)->create();
 
-        $this->call(CategorySeeder::class);
+
+        \App\Models\Category::factory()->count(6)->create()->each(function ($category) {
+            //create 5 posts for each user
+            \App\Models\FoodItem::factory()->count(4)->create(['categories_id'=>$category->id]);
+        });
+
+        // Category::factory(4)->create()
+        //     ->each(function($category){
+        //     FoodItem::create([
+        //         'categories_id' => $category->id,
+        //         'name' => fake()->name(),
+        //         'ingredients' => fake()->paragraph(),
+        //         'price' => fake()->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 50),
+        //         'rating' => fake()->randomFloat($nbMaxDecimals = 2, $min = 4, $max = 5),
+        //     ]);
+        // });
+
+        // $this->call(CategorySeeder::class);
         // $this->call(DeviceSeeder::class);
         // $this->call(DeviceMemorySeeder::class);
         // $this->call(ItemSeeder::class);

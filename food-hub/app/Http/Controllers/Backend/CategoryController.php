@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -44,16 +45,22 @@ class CategoryController extends Controller
             'name' => 'required|unique:categories,name',
         ]);
 
+        $slug = Str::of($request->name)->slug('-');
+
+        // return $slug;
+
         if ($request->hasFile('photo')) {
             $imageName = time() . '.' . $request->photo->extension();
             Category::create([
                 'name' => $request->name,
+                'slug' => $slug,
                 'photo' => $imageName,
             ]);
             $request->photo->move(public_path('assets/images/categories'), $imageName);
         } else {
             Category::create([
-                'name' => $request->name
+                'name' => $request->name,
+                'slug' => $slug
             ]);
         }
 
@@ -97,12 +104,15 @@ class CategoryController extends Controller
             'name' => 'required|unique:categories,name,' . $id,
         ]);
 
+        $slug = Str::of($request->name)->slug('-');
+
         $category = new Category();
 
         $category = Category::find($id);
 
         $data = [
             'name' => $request->name,
+            'name' => $slug,
         ];
 
         if (request()->hasFile('photo') && request('photo') != '') {

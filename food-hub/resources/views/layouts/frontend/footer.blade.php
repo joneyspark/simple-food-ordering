@@ -53,19 +53,28 @@
     </div>
   </div>
 </section>
+
 <!-- End Footer  -->
 
 </div>
 
 <!-- jquery -->
-<script src="frontend/assets/js/jquery-3.6.0.js"></script>
+<script src="{{ asset('frontend/assets/js/jquery-3.6.0.js') }}"></script>
 <!-- isotope js -->
-<script src="frontend/assets/js/isotope.pkgd.js"></script>
 <!-- bootstrap js -->
-<script src="frontend/assets/js/bootstrap.min.js"></script>
+<script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
 <!-- custom js -->
-<script src="frontend/assets/js/form.js"></script>
-<script src="frontend/assets/js/script.js"></script>
+<script src="{{ asset('frontend/assets/js/vue.global.js') }}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="{{ asset('frontend/assets/js/form.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/isotope.pkgd.js') }}"></script>
+<script>
+  var userData = @json(auth()->user());
+</script>
+<script src="{{ asset('frontend/assets/js/script.js') }}"></script>
+
+@yield('body-scripts')
+
 </body>
 
 </html>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\FoodItemController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -10,9 +11,11 @@ use App\Http\Controllers\UserController;
 
 // frontend routes
 Route::group(['client'],function () {
-    Route::get('/', function () {
-        return view('layouts.frontend.pages.home');
-    });
+    Route::get('/', [FrontendController::class, 'home'])->name('home');
+
+    // Route::get('/', function () {
+    //     return view('layouts.frontend.pages.home');
+    // });
     
     Route::get('/about', function () {
         return view('layouts.frontend.pages.about');
