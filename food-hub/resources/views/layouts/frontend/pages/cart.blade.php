@@ -63,6 +63,7 @@
                         </div>
                       </div>
                     </div>
+                    <h1 class="text-danger" v-if="hasError('cartItems')">@{{ getError('cartItems') }}</h1>
                   </div>
 
                 </div>
@@ -70,6 +71,7 @@
                   <div class="card bank-card text-white rounded-3">
                     <div class="card-body">
                       <div class="d-flex justify-content-between align-items-center mb-4">
+
                         <h5 class="mb-0">Shipping Address</h5>
 
                       </div>
@@ -100,8 +102,6 @@
                     <div class="card-body">
                       <div class="d-flex justify-content-between align-items-center mb-4">
                         <h5 class="mb-0">Card details</h5>
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" class="img-fluid rounded-3"
-                          style="width: 45px;" alt="Avatar">
                       </div>
 
                       <p class="small mb-4">Card type</p>
@@ -113,29 +113,37 @@
 
 
                       <div class="form-outline form-white my-4">
-                        <input type="text" id="typeName" class="form-control form-control-lg" v-model="cartDetails.cHolderName"
-                          placeholder="Cardholder's Name" />
+                        <span class="text-danger" v-if="hasError('cartDetails.card_name')">@{{ getError('cartDetails.card_name') }}</span>
+                        <input type="text" id="typeName" class="form-control form-control-lg"
+                          v-model="cartDetails.card_name" placeholder="Cardholder's Name" />
                         <label class="form-label" for="typeName">Cardholder's Name</label>
                       </div>
 
                       <div class="form-outline form-white mb-4">
-                        <input type="text" id="cardnumber" class="form-control form-control-lg" v-model="cartDetails.cNumber"
-                          placeholder="1234 5678 9012 3457" />
+                        <span class="text-danger"
+                          v-if="hasError('cartDetails.card_number')">@{{ getError('cartDetails.card_number') }}</span>
+                        <input type="text" id="cardnumber" class="form-control form-control-lg"
+                          v-model="cartDetails.card_number" placeholder="1234 5678 9012 3457" />
                         <label class="form-label" for="cardnumber">Card Number</label>
                       </div>
 
                       <div class="row mb-4">
                         <div class="col-md-6">
                           <div class="form-outline form-white">
-                            <input type="text" id="typeExp" class="form-control form-control-lg" v-model="cartDetails.expire"
-                              placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7" />
+                            <span class="text-danger"
+                              v-if="hasError('cartDetails.expire')">@{{ getError('cartDetails.expire') }}</span>
+                            <input type="text" id="typeExp" class="form-control form-control-lg"
+                              v-model="cartDetails.expire" placeholder="MM/YYYY" size="7" id="exp"
+                              minlength="7" maxlength="7" />
                             <label class="form-label" for="typeExp">Expiration</label>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-outline form-white">
-                            <input type="password" id="cvv" class="form-control form-control-lg" v-model="cartDetails.cvc"
-                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                            <span class="text-danger" v-if="hasError('cartDetails.cvc')">@{{ getError('cartDetails.cvc') }}</span>
+                            <input type="password" id="cvv" class="form-control form-control-lg"
+                              v-model="cartDetails.cvc" placeholder="&#9679;&#9679;&#9679;" size="1"
+                              minlength="3" maxlength="3" />
                             <label class="form-label" for="cvv">Cvv</label>
                           </div>
                         </div>
@@ -157,7 +165,8 @@
                         <p class="mb-2">£ @{{ taxAmount.toFixed(2) }}</p>
                       </div>
 
-                      <button type="button" class="btn btn-info btn-block btn-lg checkout-btn" @click="processCheckout">
+                      <button type="button" class="btn btn-info btn-block btn-lg checkout-btn"
+                        @click="processCheckout">
                         <div class="d-flex justify-content-between">
                           <span>£ @{{ cartGrandTotal.toFixed(2) }}</span>
                           <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>

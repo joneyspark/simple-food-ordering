@@ -16,8 +16,8 @@ createApp({
       },
 
       cartDetails: {
-        cHolderName: '',
-        cNumber: '',
+        card_name: '',
+        card_number: '',
         expire: '',
         cvc: ''
       },
@@ -75,18 +75,21 @@ createApp({
         paymentInfo: this.cartDetails,
         userId: this.user ? this.user.id : null
       }
-      
+
       axios.post('/api/checkout', data)
         .then(response => {
           // Handle success, show a success message, etc.
           this.errors = {}
-          console.log("response", response.data);
+          if (response.status === 200) {
+            this.cartItems = []
+            localStorage.setItem('cartItems', JSON.stringify(this.cartItems))
+            window.location = '/thankyou'
+          }
         })
         .catch(error => {
           // Handle error, show an error message, etc.
           if (error.response && error.response.status === 422) {
             this.errors = error.response.data.errors
-            console.log(this.errors && this.errors.shippingAddress["address"][0]);
           } else {
             // Handle other errors, e.g., network issues
             console.error(error);
@@ -137,6 +140,11 @@ createApp({
       this.count = localStorageData.length
       this.localStorageItems = localStorageData
       this.cartItems = localStorageData
+    }
+    if (this.user) {
+
+      this.shippingAddress.name = this.user.name
+      this.shippingAddress.email = this.user.email
     }
   }
 }).mount('#v-app')

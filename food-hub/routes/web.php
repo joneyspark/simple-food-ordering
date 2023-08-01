@@ -12,10 +12,6 @@ use App\Http\Controllers\UserController;
 // frontend routes
 Route::group(['client'],function () {
     Route::get('/', [FrontendController::class, 'home'])->name('home');
-
-    // Route::get('/', function () {
-    //     return view('layouts.frontend.pages.home');
-    // });
     
     Route::get('/about', function () {
         return view('layouts.frontend.pages.about');
@@ -28,21 +24,14 @@ Route::group(['client'],function () {
     Route::get('/menu', function () {
         return view('layouts.frontend.pages.menu');
     });
-
-    Route::get('/cart', function () {
-        return view('layouts.frontend.pages.cart');
+    
+    Route::get('/thankyou', function () {
+        return view('layouts.frontend.pages.thankyou');
     });
 
 
 });
 
-// Route::get('/login', function(){
-//     return view('')
-// });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'admin', 'verified'])->group(function () {
 
@@ -53,6 +42,10 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     // Food resoucres
     Route::resource('foods', FoodItemController::class);
     Route::resource('category', CategoryController::class);
+
+    Route::get('/cart', function () {
+        return view('layouts.frontend.pages.cart');
+    });
 });
 
 // Employee routes

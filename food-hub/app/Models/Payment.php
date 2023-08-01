@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Payment extends Model
 {
     use HasFactory, HasUuids;
-
-    protected $fillable = ['user_id', 'status', 'payment'];
+    protected $fillable = ['order_id', 'card_name', 'card_number', 'expire'];
 
 }
