@@ -18,6 +18,7 @@ class FoodItemFactory extends Factory
     {
         return [
             // 'categories_id' => $category->id,
+            
             'name' => fake()->name(),
             'ingredients' => fake()->paragraph(),
             'photo' => fake()->imageUrl($width = 640, $height = 480),

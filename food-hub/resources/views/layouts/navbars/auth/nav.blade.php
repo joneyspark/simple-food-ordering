@@ -12,10 +12,6 @@
 
       @if (auth()->user()->type == 'admin')
         <h3 class="badge badge-pill badge-lg bg-gradient-primary">Super Admin Panel</h3>
-      @else
-        <span class="badge badge-pill badge-lg bg-gradient-primary">
-          {{ auth()->user()->shop->name }}
-        </span>
       @endif
     </div>
 

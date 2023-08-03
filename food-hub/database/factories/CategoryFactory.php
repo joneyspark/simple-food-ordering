@@ -18,7 +18,7 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
-        $name = fake()->company();
+        $name = fake()->unique()->company();
         $slug = Str::of($name)->slug('-');
 
         return [

@@ -10,5 +10,5 @@ class Cart extends Model
 {
     use HasFactory, HasUuids;
 
-    protected $fillable = ['order_id', 'item_id', 'price', 'qty'];
+    protected $fillable = ['order_id', 'item_id', 'price', 'qty', 'total'];
 }

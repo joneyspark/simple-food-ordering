@@ -1,5 +1,5 @@
 @extends('layouts.frontend.master')
-@section('pagetitle', 'Food Hub - Home')
+@section('pagetitle', 'Food Hub - Cart')
 @section('content')
   <div class="section-gap"></div>
   <!-- cart section -->

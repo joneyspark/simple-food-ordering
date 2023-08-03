@@ -65,13 +65,18 @@ class OrderController extends Controller
             'user_id' => $userId,
         ]);
 
+        $shippingCost = 5;
         foreach ($cartItems as $cartItem) {
+            $total = $cartItem['price'] * $cartItem['qty'];
+            $taxRate = $total * 0.1;
+            $totalPrice = $total + $taxRate + $shippingCost;
              Cart::create([
                 'order_id' => $order->id,
                 'item_id' => $cartItem['id'],
                 'item_name' => $cartItem['name'],
                 'price' => $cartItem['price'],
                 'qty' => $cartItem['qty'],
+                'total' => $totalPrice
             ]);
         }
 

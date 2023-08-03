@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('item_id');
             $table->integer('price');
             $table->integer('qty');
+            $table->integer('total');
             $table->timestamps();
         });
     }

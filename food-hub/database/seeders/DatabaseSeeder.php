@@ -27,10 +27,10 @@ class DatabaseSeeder extends Seeder
 
 
         \App\Models\User::factory()->create([
-            'name' => 'Joney Spark',
-            'email' => 'joney@email.com',
+            'name' => 'Arifur Rahman',
+            'email' => 'arifur@email.com',
             'type' => 'admin',
-            'phone' => '07888673770',
+            'phone' => '070123456789',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
@@ -41,29 +41,16 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Category::factory()->count(6)->create()->each(function ($category) {
             //create 5 posts for each user
-            \App\Models\FoodItem::factory()->count(4)->create(['categories_id'=>$category->id]);
+            \App\Models\FoodItem::factory()->count(4)->create(['categories_id' => $category->id]);
         });
 
-        // Category::factory(4)->create()
-        //     ->each(function($category){
-        //     FoodItem::create([
-        //         'categories_id' => $category->id,
-        //         'name' => fake()->name(),
-        //         'ingredients' => fake()->paragraph(),
-        //         'price' => fake()->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 50),
-        //         'rating' => fake()->randomFloat($nbMaxDecimals = 2, $min = 4, $max = 5),
-        //     ]);
-        // });
+        \App\Models\Order::factory()->count(50)->create()->each(function ($order) {
 
-        // $this->call(CategorySeeder::class);
-        // $this->call(DeviceSeeder::class);
-        // $this->call(DeviceMemorySeeder::class);
-        // $this->call(ItemSeeder::class);
+            \App\Models\Cart::factory()->count(2)->create(['order_id' => $order->id]);
 
-        // \App\Models\Sale::factory(30)->create();
-        // \App\Models\Sale::factory(30)->create();
-        // Shop::factory(5)->has(Sale::factory()->count(30))->create();
-        // factory(App\Models\Sale::class, 50)->create();
+            \App\Models\ShippingAddress::factory()->count(1)->create(['order_id' => $order->id]);
 
+            \App\Models\Payment::factory()->count(1)->create(['order_id' => $order->id]);
+        });
     }
 }
