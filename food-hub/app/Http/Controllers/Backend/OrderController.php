@@ -58,7 +58,7 @@ class OrderController extends Controller
         // Insert data into the database tables
 
         $cartItems = $request->input('cartItems');
-        
+
         $userId = $request->input('userId');
 
         $order = Order::create([
@@ -68,9 +68,9 @@ class OrderController extends Controller
         $shippingCost = 5;
         foreach ($cartItems as $cartItem) {
             $total = $cartItem['price'] * $cartItem['qty'];
-            $taxRate = $total * 0.1;
+            $taxRate = $total * 0.1/100;
             $totalPrice = $total + $taxRate + $shippingCost;
-             Cart::create([
+            Cart::create([
                 'order_id' => $order->id,
                 'item_id' => $cartItem['id'],
                 'item_name' => $cartItem['name'],
@@ -99,7 +99,25 @@ class OrderController extends Controller
             // Other fields for city, zip code, country, etc.
         ]);
 
-        
+
         return response()->json(['message' => 'Checkout completed successfully']);
+    }
+
+    public function orders()
+    {
+        $orders = Order::with('user')->orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        // return $orders;
+
+        return view('layouts.order.index')->with(['orders' => $orders]);
+    }
+
+    public function view_order($id)
+    {
+        $order = Order::with('user', 'carts.food')->where('id', $id)->first();
+
+        // return $order;
+        return view('layouts.order.view-order')->with(['order' => $order]);
     }
 }

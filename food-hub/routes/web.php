@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\FoodItemController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -10,9 +11,9 @@ use App\Http\Controllers\UserController;
 
 
 // frontend routes
-Route::group(['client'],function () {
+Route::group(['client'], function () {
     Route::get('/', [FrontendController::class, 'home'])->name('home');
-    
+
     Route::get('/about', function () {
         return view('layouts.frontend.pages.about');
     });
@@ -24,12 +25,10 @@ Route::group(['client'],function () {
     Route::get('/menu', function () {
         return view('layouts.frontend.pages.menu');
     });
-    
+
     Route::get('/thankyou', function () {
         return view('layouts.frontend.pages.thankyou');
     });
-
-
 });
 
 
@@ -42,10 +41,13 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     // Food resoucres
     Route::resource('foods', FoodItemController::class);
     Route::resource('category', CategoryController::class);
-
     Route::get('/cart', function () {
         return view('layouts.frontend.pages.cart');
     });
+
+    Route::get('/orders', [OrderController::class, 'orders'])->name('orders');
+    Route::get('/orders/pending', [OrderController::class, 'pending_orders'])->name('pending_orders');
+    Route::get('/view-order/{id}', [OrderController::class, 'view_order'])->name('view_order');
 });
 
 // Employee routes

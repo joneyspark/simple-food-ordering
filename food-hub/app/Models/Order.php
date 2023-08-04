@@ -12,4 +12,13 @@ class Order extends Model
 
     protected $fillable = ['user_id', 'status', 'payment'];
 
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+    public function carts(){
+        return $this->hasMany(Cart::class);
+    }
+
+
+
 }

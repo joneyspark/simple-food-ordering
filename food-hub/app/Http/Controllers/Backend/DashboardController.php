@@ -54,15 +54,6 @@ class DashboardController extends Controller
                 ->whereBetween('orders.created_at', [$startDate, $endDate])
                 ->sum('carts.total');
 
-            // $sales = Sale::select(
-            //     DB::raw('month(created_at) as month'),
-            //     DB::raw('sum(total) as total'),
-            // )
-            //     ->where(DB::raw('date(created_at)'), '>=', Carbon::now()->startOfYear())
-            //     ->orderBy('month')
-            //     ->groupBy('month')
-            //     ->get();
-
             $currentYear = Carbon::now()->year;
 
             $monthly_sales = DB::table('orders')
@@ -76,15 +67,38 @@ class DashboardController extends Controller
                 ->orderBy(DB::raw('MONTH(orders.created_at)'))
                 ->get();
 
-                
-
             $month_total_report = [];
 
             foreach ($monthly_sales as $data) {
                 $month_total_report[] = $data->total_sales;
             }
 
-            // return $month_total_report;
+            // orders
+
+            $todayOrderCount = DB::table('orders')
+                ->whereDate('created_at', Carbon::today())
+                ->count();
+
+            $startDate = Carbon::now()->startOfWeek();
+            $endDate = Carbon::now()->endOfWeek();
+
+            $weeklyOrderCount = DB::table('orders')
+                ->whereBetween('created_at', [$startDate, $endDate])
+                ->count();
+
+            $startDate = Carbon::now()->startOfMonth();
+            $endDate = Carbon::now()->endOfMonth();
+
+            $monthlyOrderCount = DB::table('orders')
+                ->whereBetween('created_at', [$startDate, $endDate])
+                ->count();
+
+            $startDate = Carbon::now()->startOfYear();
+            $endDate = Carbon::now()->endOfYear();
+
+            $yearlyOrderCount = DB::table('orders')
+                ->whereBetween('created_at', [$startDate, $endDate])
+                ->count();
 
 
             return view('dashboard', compact(
@@ -93,6 +107,10 @@ class DashboardController extends Controller
                 'monthly_total',
                 'yearly_total',
                 'month_total_report',
+                'todayOrderCount',
+                'weeklyOrderCount',
+                'monthlyOrderCount',
+                'yearlyOrderCount',
                 'users'
             ));
         }

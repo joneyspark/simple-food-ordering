@@ -3,9 +3,8 @@
   <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
       aria-hidden="true" id="iconSidenav"></i>
-    <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="{{ route('dashboard') }}">
-      <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="...">
-      <span class="ms-3 font-weight-bold">FOOD HUB</span>
+    <a class="align-items-center d-flex m-0 navbar-brand text-wrap logo-text" href="{{ route('dashboard') }}">
+      <span class="text-uppercase"><i class="fas fa-utensils"></i> FOOD HUB</span>
     </a>
   </div>
   <hr class="horizontal dark mt-0">
@@ -80,6 +79,34 @@
                   href="{{ url('foods/create') }}">
 
                   <span class="sidenav-normal"> Add New Food </span>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </li>
+        
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#orders"
+            class="nav-link {{ Request::is('orders*') ? 'active' : '' }}" href="{{ url('orders') }}"
+            aria-controls="orders" role="button" aria-expanded="false">
+            <div
+              class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center d-flex align-items-center justify-content-center  me-2">
+              <i class="fa-solid fa-shop-lock"></i>
+            </div>
+            <span class="nav-link-text ms-1">Orders</span>
+          </a>
+          <div class="collapse {{ Request::is('orders*') ? 'show' : '' }}" id="orders" style="">
+            <ul class="nav ms-4 ps-3">
+              <li class="nav-item ">
+                <a class="nav-link {{ Request::is('orders') ? 'active' : '' }}" href="{{ url('orders') }}">
+                  <span class="sidenav-normal"> Order List </span>
+                </a>
+              </li>
+              
+              <li class="nav-item ">
+                <a class="nav-link {{ Request::is('orders/pending') ? 'active' : '' }}" href="{{ url('orders/pending') }}">
+                  <span class="sidenav-normal"> Pending Order </span>
                 </a>
               </li>
 

@@ -22,7 +22,7 @@
           @if (auth()->user()->photo)
             <img src="{{ asset('assets/images/' . auth()->user()->photo) }}" height="50">
           @else
-            <img src="../assets/images/user.webp" class="avatar avatar-sm me-3">
+            <img src="{{ asset('assets/images/user.webp')}}" class="avatar avatar-sm me-3">
           @endif
           {{-- <i class="fa fa-user me-sm-1"></i> --}}
           <span class="d-sm-inline d-none px-1">{{ auth()->user()->name }}</span>
@@ -40,10 +40,7 @@
               <span class="d-sm-inline d-none">Sign Out</span>
             </x-dropdown-link>
           </form>
-          {{-- <a href="{{ url('/logout')}}" class="nav-link text-body font-weight-bold px-0">
-                    <i class="fa fa-user me-sm-1"></i>
-                    <span class="d-sm-inline d-none">Sign Out</span>
-                </a> --}}
+         
         </li>
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
           <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">

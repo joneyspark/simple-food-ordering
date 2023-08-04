@@ -172,3 +172,13 @@ ul.custom-nav-style li {
     }
 
 }
+
+a.logo-text span {
+    color: #de1693;
+    
+    font-size: 20px;
+    display: inline-block;
+    font-weight: 800;
+    border: 1px solid #f4ecec;
+    padding: 3px;
+  }

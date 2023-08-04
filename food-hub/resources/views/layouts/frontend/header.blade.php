@@ -24,7 +24,6 @@
   <link rel="stylesheet" href="frontend/assets/css/main.css">
   <link rel="icon" href="frontend/assets/images/favicon.png">
 
-
 </head>
 
 <body>
