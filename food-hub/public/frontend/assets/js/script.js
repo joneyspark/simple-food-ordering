@@ -22,6 +22,7 @@ createApp({
         cvc: ''
       },
       user: userData,
+      change_status: '',
       errors: {}
     }
   },
@@ -97,6 +98,9 @@ createApp({
 
         });
 
+    },
+    test(e){
+      console.log(e.target.value);
     },
     hasError(fieldName) {
       return fieldName in this.errors;

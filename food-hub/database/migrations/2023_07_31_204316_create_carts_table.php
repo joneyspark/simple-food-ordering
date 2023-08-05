@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('order_id');
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->string('item_id');
             $table->integer('price');
             $table->integer('qty');

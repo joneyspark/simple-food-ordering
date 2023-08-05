@@ -68,7 +68,7 @@ class OrderController extends Controller
         $shippingCost = 5;
         foreach ($cartItems as $cartItem) {
             $total = $cartItem['price'] * $cartItem['qty'];
-            $taxRate = $total * 0.1/100;
+            $taxRate = $total * 0.1 / 100;
             $totalPrice = $total + $taxRate + $shippingCost;
             Cart::create([
                 'order_id' => $order->id,
@@ -108,9 +108,18 @@ class OrderController extends Controller
         $orders = Order::with('user')->orderBy('created_at', 'desc')
             ->paginate(10);
 
-        // return $orders;
-
         return view('layouts.order.index')->with(['orders' => $orders]);
+    }
+
+
+    public function pending_orders()
+    {
+        $orders = Order::with('user')
+            ->where('status', 'pending')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        return view('layouts.order.pending-order')->with(['orders' => $orders]);
     }
 
     public function view_order($id)
@@ -120,4 +129,35 @@ class OrderController extends Controller
         // return $order;
         return view('layouts.order.view-order')->with(['order' => $order]);
     }
+
+    public function change_status($id, $status)
+    {
+        $order = Order::find($id);
+        if (!$order) {
+            return response()->json(['message' => 'Model not found'], 404);
+        }
+        $order->update(['status' => $status]);
+
+        return response()->json(['message' => 'Field updated successfully']);
+    }
+
+    public function delete_order($id)
+{
+    $order = Order::find($id);
+
+    if (!$order) {
+        return redirect()->back()->with('error', 'Record not found');
+    }
+
+    $order->carts()->delete();
+    $order->payments()->delete();
+    $order->shipping_addresses()->delete();
+
+    // Delete the record
+    $order->delete();
+
+    return redirect()->back()->with('message', 'Order deleted successfully');
+}
+
+    
 }

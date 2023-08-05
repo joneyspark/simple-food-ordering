@@ -46,8 +46,10 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     });
 
     Route::get('/orders', [OrderController::class, 'orders'])->name('orders');
-    Route::get('/orders/pending', [OrderController::class, 'pending_orders'])->name('pending_orders');
+    Route::get('/pending-orders', [OrderController::class, 'pending_orders'])->name('pending_orders');
     Route::get('/view-order/{id}', [OrderController::class, 'view_order'])->name('view_order');
+
+    Route::delete('/order-delete/{id}', [OrderController::class, 'delete_order'])->name('delete_order');
 });
 
 // Employee routes

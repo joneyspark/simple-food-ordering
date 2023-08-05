@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('shipping_addresses', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('order_id');
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->string('name');
             $table->string('email');
             $table->mediumText('address');

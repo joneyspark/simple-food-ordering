@@ -105,7 +105,7 @@
               </li>
               
               <li class="nav-item ">
-                <a class="nav-link {{ Request::is('orders/pending') ? 'active' : '' }}" href="{{ url('orders/pending') }}">
+                <a class="nav-link {{ Request::is('pending-orders') ? 'active' : '' }}" href="{{ url('pending-orders') }}">
                   <span class="sidenav-normal"> Pending Order </span>
                 </a>
               </li>

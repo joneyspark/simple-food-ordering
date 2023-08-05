@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('id');
             $table->string('name');
             $table->string('categories_id');
-            $table->foreign('categories_id')->references('id')->on('categories');
+            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
             $table->mediumText('ingredients');
             $table->text('description')->nullable();
             $table->integer('price');

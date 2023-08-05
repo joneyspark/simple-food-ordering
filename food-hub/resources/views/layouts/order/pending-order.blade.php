@@ -21,7 +21,7 @@
             </a>
             <div class="food-list-wrap">
               <h5 class="mb-1 font-weight-bolder px-3">
-                Order List <span class="badge badge-pill bg-gradient-primary">
+                Pending Order List <span class="badge badge-pill bg-gradient-primary">
                   {{ $orders->total() }}
                 </span>
               </h5>
