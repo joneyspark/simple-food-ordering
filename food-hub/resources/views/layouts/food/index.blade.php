@@ -80,7 +80,7 @@
                   <span class="text-secondary text-xs font-weight-bold">{{ $food->created_at->diffForHumans() }}</span>
                 </td>
                 <td class="align-middle">
-                  <a href="{{ url('food', $food->id) }}"
+                  <a href="{{ url('foods', $food->id) }}"
                     class="text-secondary font-weight-bold text-xs px-2 custom-edit-icon-style" data-toggle="tooltip"
                     data-original-title="Edit user">
                     <i class="fa-solid fa-pen"></i>

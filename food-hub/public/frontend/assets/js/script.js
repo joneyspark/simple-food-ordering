@@ -123,7 +123,7 @@ createApp({
       return this.cartItems.reduce((total, item) => total + item.price * item.qty, 0);
     },
     taxAmount() {
-      return this.totalPrice * this.taxRate;
+      return this.totalPrice * this.taxRate/100;
     },
     cartGrandTotal() {
       return this.totalPrice + this.shippingCost + this.taxAmount;

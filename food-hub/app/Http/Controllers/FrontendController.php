@@ -17,4 +17,15 @@ class FrontendController extends Controller
         // return $foods;
         return view('layouts.frontend.pages.home')->with(['foods' => $foods, 'categories'=> $categories]);
     }
+    
+    public function menu()
+    {
+        $categories = Category::all();
+        $foods = FoodItem::with('category')
+            ->orderBy('name', 'asc')
+            ->get();
+        // return $foods;
+        return view('layouts.frontend.pages.menu')->with(['foods' => $foods, 'categories'=> $categories]);
+    }
+
 }

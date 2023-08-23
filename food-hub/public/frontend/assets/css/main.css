@@ -40,6 +40,12 @@ h1.section-heading {
 
 /* header style */
 
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 .collapse.navbar-collapse.order-lg-1.food-hub-menu li a {
     font-size: 18px;
     font-weight: 400;
@@ -318,6 +324,7 @@ button.checkout-btn {
     border: none;
     color: #000;
 }
+
 button.checkout-btn:hover {
     background: #000;
     color: #fff;

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,9 +17,9 @@ class FoodItemFactory extends Factory
      */
     public function definition()
     {
+        $category = Category::inRandomOrder()->first();
         return [
-            // 'categories_id' => $category->id,
-            
+            'categories_id' => $category->id,
             'name' => fake()->name(),
             'ingredients' => fake()->paragraph(),
             'photo' => fake()->imageUrl($width = 640, $height = 480),

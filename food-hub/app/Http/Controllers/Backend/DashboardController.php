@@ -113,6 +113,8 @@ class DashboardController extends Controller
                 'yearlyOrderCount',
                 'users'
             ));
+        }else {
+            return redirect('/');
         }
     }
 

@@ -38,11 +38,14 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory(5)->create();
 
+        $this->call(CategorySeeder::class);
 
-        \App\Models\Category::factory()->count(6)->create()->each(function ($category) {
-            //create 5 posts for each user
-            \App\Models\FoodItem::factory()->count(4)->create(['categories_id' => $category->id]);
-        });
+        // \App\Models\Category::factory()->count(6)->create()->each(function ($category) {
+        //     //create 5 posts for each user
+        //     \App\Models\FoodItem::factory()->count(4)->create(['categories_id' => $category->id]);
+        // });
+
+        \App\Models\FoodItem::factory(12)->create();
 
         \App\Models\Order::factory()->count(50)->create()->each(function ($order) {
 

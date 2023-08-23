@@ -1,8 +1,7 @@
 @extends('layouts.master')
 @section('pagetitle', 'Orders')
 @section('content')
-  <div class="row status-app">
-
+<div class="row status-app">
     <div class="col-12 pb-4" id="profile">
       @if (session()->has('message'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">

@@ -1,8 +1,8 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
-<!-- Session Status -->
-<x-auth-session-status class="mb-4" :status="session('status')" />
+  <!-- Session Status -->
+  <x-auth-session-status class="mb-4" :status="session('status')" />
   <div class="main-content mt-0">
     <section>
       <div class="page-header min-vh-75">
@@ -15,12 +15,12 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                  <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <label>Email</label>
                     <div class="mb-3">
-                        <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus />
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                      <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus />
+                      <x-input-error :messages="$errors->get('email')" class="mt-2" />
                       {{-- <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon"
                     required autofocus> --}}
                       {{-- @error('email')
@@ -29,41 +29,34 @@
                     </div>
                     <label>Password</label>
                     <div class="mb-3">
-                        <x-text-input id="password"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
+                      <x-text-input id="password" type="password" name="password" required
+                        autocomplete="current-password" />
 
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
-                      {{-- <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon"
-                      > --}}
-                      {{-- @error('password')
-                        <p class="text-danger text-xs mt-2">{{ $message }}</p>
-                      @enderror --}}
+                      <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
                     </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
-                      <label class="form-check-label" for="rememberMe">Remember me</label>
+                    <div class="flex items-center justify-end mt-4">
+                      <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                        {{ __('New Customer Sign up ?') }}
+                      </a>
+
                     </div>
                     <div class="text-center">
-                        <x-primary-button>
-                            {{ __('Log in') }}
-                        </x-primary-button>
+                      <x-primary-button>
+                        {{ __('Log in') }}
+                      </x-primary-button>
                       {{-- <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button> --}}
                     </div>
                   </form>
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
-                <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('../assets/img/curved-images/curved6.jpg')"></div>
-              </div>
+            <div class="col-md-6 d-flex align-items-center login-regisger-img">
+              <img src="{{ asset('assets/images/food.svg') }}" alt="">
             </div>
           </div>
         </div>
       </div>
     </section>
-</div>
-
+  </div>
 @endsection

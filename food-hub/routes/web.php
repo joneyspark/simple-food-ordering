@@ -22,9 +22,7 @@ Route::group(['client'], function () {
         return view('layouts.frontend.pages.contact');
     });
 
-    Route::get('/menu', function () {
-        return view('layouts.frontend.pages.menu');
-    });
+    Route::get('/menu', [FrontendController::class, 'menu'])->name('menu');
 
     Route::get('/thankyou', function () {
         return view('layouts.frontend.pages.thankyou');
@@ -50,10 +48,16 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     Route::get('/view-order/{id}', [OrderController::class, 'view_order'])->name('view_order');
 
     Route::delete('/order-delete/{id}', [OrderController::class, 'delete_order'])->name('delete_order');
+
 });
 
 // Employee routes
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/myaccount', [OrderController::class, 'myaccount'])->name('myaccount');
+    Route::get('/view-customer-order/{id}', [OrderController::class, 'customer_view_order'])->name('customer_view_order');
+    Route::get('/cart', function () {
+        return view('layouts.frontend.pages.cart');
+    });
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 

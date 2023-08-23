@@ -18,18 +18,18 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- bootstrap css -->
-  <link rel="stylesheet" href="frontend/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
 
   <!-- custom css -->
-  <link rel="stylesheet" href="frontend/assets/css/main.css">
-  <link rel="icon" href="frontend/assets/images/favicon.png">
+  <link rel="stylesheet" href="{{ asset('frontend/assets/css/main.css') }}">
+  <link rel="icon" href="{{ asset('frontend/assets/images/favicon.png') }}">
 
 </head>
 
 <body>
   <div id="v-app">
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 border-bottom sticky-header">
 
       <div class="container" id="header-cart">
         <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0 flex-sm-grow-0 flex-grow-1"
@@ -104,6 +104,14 @@
               </a>
 
             </li>
+            @if (auth()->user())
+              <li class="nav-item px-2 py-2 border-0">
+                <a class="nav-link text-uppercase {{ Request::is('myaccount') ? 'active-menu' : '' }}"
+                  href="{{ url('/myaccount') }}">
+                  My Orders
+                </a>
+              </li>
+            @endif
           </ul>
         </div>
       </div>

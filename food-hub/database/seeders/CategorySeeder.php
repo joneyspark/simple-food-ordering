@@ -21,30 +21,36 @@ class CategorySeeder extends Seeder
             [
                 'id' => Str::uuid(),
                 'name' => 'Burger',
+                'slug' => 'burger',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'id' => Str::uuid(),
                 'name' => 'Pasta',
+                'slug' => 'pasta',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'id' => Str::uuid(),
                 'name' => 'Pizza',
+                'slug' => 'pizza',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'id' => Str::uuid(),
                 'name' => 'Cold Drinks',
+                'slug' => 'cold-drinks',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                
             ],
             [
                 'id' => Str::uuid(),
                 'name' => 'Hot Drinks',
+                'slug' => 'hot-drinks',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],

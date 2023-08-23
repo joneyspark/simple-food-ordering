@@ -22,7 +22,7 @@
                 little bit of meat and just onion for the vegetables. The thing that distinguishes it
                 from other Fried Rice dishes is the sauce which is made with kecap manis, a sweet soy
                 sauce that stains the rice dark brown and caramelises the rice when it cooks.</p>
-              <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+              <a class="order-btn" href="/menu">Order Now <i class="fa fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="col-12 col-sm-5 order-sm-last order-first">
@@ -40,7 +40,7 @@
                 combines the earthy flavors of mushrooms, the succulence of chicken, and the satisfying
                 texture of penne pasta. This mouthwatering creation is a perfect harmony of ingredients
                 that come together to create a memorable and satisfying meal.</p>
-              <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+              <a class="order-btn" href="/menu">Order Now <i class="fa fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="col-12 col-sm-5 order-sm-last order-first">
@@ -127,42 +127,13 @@
         </div>
 
         <div class="collection-list mt-4 row gx-0 gy-3">
-          {{-- @foreach ($foods as $food)
-            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
-              <div class="card menu-card">
-                <div class="collection-img position-relative">
-                  <img src="{{$food->photo}}" class="w-100">
-
-                </div>
-                <div class="px-3 py-3">
-                  <div class="rating">
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                  </div>
-                  <p class="text-capitalize my-1">{{ $food->name }}</p>
-                  <small>{{ $food->ingredients }}</small>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <span class="fw-normal">@{{ food.price }}</span>
-                    <button class="btn add-to-cart-btn-plus"
-                      onclick="addToCart($food->id, $food->name, $food->price, food.photo)">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          @endforeach --}}
-
-          {{-- @foreach ($foods as $food) --}}
+        
           <template v-for="food in foods" :key="food.id">
 
             <div class="col-md-6 col-lg-4 col-xl-3 p-2" :class="food.category.slug">
               <div class="card menu-card">
                 <div class="collection-img position-relative">
-                  <img :src="food.photo" class="w-100">
+                  <img :src="'/assets/images/foods/' + food.photo" class="w-100">
 
                 </div>
                 <div class="px-3 py-3">
@@ -176,7 +147,7 @@
                   <p class="text-capitalize my-1">@{{ food.name }}</p>
                   <small>@{{ food.ingredients }}</small>
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="fw-normal">@{{ food.price }}</span>
+                    <span class="fw-normal">£ @{{ food.price }}</span>
                     <button class="btn add-to-cart-btn-plus"
                       @click="addToCart(food.id, food.name, food.price, food.photo)">
                       <i class="fas fa-plus"></i>
@@ -186,8 +157,6 @@
               </div>
             </div>
           </template>
-          {{-- @endforeach --}}
-          <ul id="cartItemsList"></ul>
         </div>
       </div>
     </div>
@@ -214,11 +183,11 @@
             <p>Classic marinara sauce, authentic old-world pepperoni, all-natural Italian sausage,
               slow-roasted ham, hardwood smoked bacon, seasoned pork and beef. Best an our Hand Tossed
               crust.</p>
-            <p class="fs-3 fw-normal">£12.99</p>
+            {{-- <p class="fs-3 fw-normal">£12.99</p> --}}
             <div class="d-flex align-items-center">
 
-              <button class="btn add-to-cart-btn-plus seller-icon"><i class="fas fa-plus"></i></button>
-              <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+              {{-- <button class="btn add-to-cart-btn-plus seller-icon"><i class="fas fa-plus"></i></button> --}}
+              <a class="order-btn" href="/menu">Order Now <i class="fa fa-arrow-right"></i></a>
             </div>
 
           </div>
@@ -232,11 +201,10 @@
             <p>Bring more flavor to the table with the rich, citrusy taste of lemon roasted chicken – good
               any day or night of the week. Goes great with traditional or garlic-roasted potatoes, or
               make it skinny with a wedge salad.</p>
-            <p class="fs-3 fw-normal">£12.00</p>
             <div class="d-flex align-items-center">
 
-              <button class="btn add-to-cart-btn-plus seller-icon"><i class="fas fa-plus"></i></button>
-              <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+              {{-- <button class="btn add-to-cart-btn-plus seller-icon"><i class="fas fa-plus"></i></button> --}}
+              <a class="order-btn" href="/menu">Order Now <i class="fa fa-arrow-right"></i></a>
             </div>
 
           </div>
@@ -255,11 +223,11 @@
             <h1 class="section-heading">OVEN FRIED CHICKEN WINGS</h1>
             <p>Need a game day platter that is easy to make, but also tastes delicious? Try this recipe that
               uses simple pantry ingredients to create a yummy, fried taste in the oven!</p>
-            <p class="fs-3 fw-normal">£10.00</p>
+            {{-- <p class="fs-3 fw-normal">£10.00</p> --}}
             <div class="d-flex align-items-center">
 
-              <button class="btn add-to-cart-btn-plus seller-icon"><i class="fas fa-plus"></i></button>
-              <a class="order-btn" href="#">Order Now <i class="fa fa-arrow-right"></i></a>
+              {{-- <button class="btn add-to-cart-btn-plus seller-icon"><i class="fas fa-plus"></i></button> --}}
+              <a class="order-btn" href="/menu">Order Now <i class="fa fa-arrow-right"></i></a>
             </div>
 
           </div>

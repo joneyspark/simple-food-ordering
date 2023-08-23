@@ -20,9 +20,9 @@ return new class extends Migration
             $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
             $table->mediumText('ingredients');
             $table->text('description')->nullable();
-            $table->integer('price');
+            $table->float('price');
             $table->string('photo')->nullable();
-            $table->integer('rating');
+            $table->float('rating');
             $table->timestamps();
         });
     }

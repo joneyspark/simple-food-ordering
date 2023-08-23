@@ -31,7 +31,7 @@
                           <div class="col-12 col-sm-6">
                             <div class="d-flex align-items-center">
                               <div>
-                                <img src="frontend/assets/images/food-img-1.png" class="img-fluid rounded-3"
+                                <img :src="'frontend/assets/images/' + cartItem.photo" class="img-fluid rounded-3"
                                   alt="Shopping item" style="width: 65px;">
                               </div>
                               <div class="ms-3">
@@ -161,7 +161,7 @@
                       </div>
 
                       <div class="d-flex justify-content-between mb-4">
-                        <p class="mb-2">TAX(Incl. 10%)</p>
+                        <p class="mb-2">TAX(Incl 0.1%)</p>
                         <p class="mb-2">£ @{{ taxAmount.toFixed(2) }}</p>
                       </div>
 

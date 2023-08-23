@@ -138,26 +138,50 @@ class OrderController extends Controller
         }
         $order->update(['status' => $status]);
 
-        return response()->json(['message' => 'Field updated successfully']);
+        return response()->json(['message' => 'Status updated successfully']);
     }
 
     public function delete_order($id)
-{
-    $order = Order::find($id);
+    {
+        $order = Order::find($id);
 
-    if (!$order) {
-        return redirect()->back()->with('error', 'Record not found');
+        if (!$order) {
+            return redirect()->back()->with('error', 'Record not found');
+        }
+
+        $order->carts()->delete();
+        $order->payments()->delete();
+        $order->shipping_addresses()->delete();
+
+        // Delete the record
+        $order->delete();
+
+        return redirect()->back()->with('message', 'Order deleted successfully');
     }
 
-    $order->carts()->delete();
-    $order->payments()->delete();
-    $order->shipping_addresses()->delete();
+    public function myaccount()
+    {
 
-    // Delete the record
-    $order->delete();
+        $user = Auth::user();
+        $orders = Order::with('user')
+            ->where('user_id', $user->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
 
-    return redirect()->back()->with('message', 'Order deleted successfully');
-}
+        // return $orders;
 
-    
+        return view('layouts.frontend.pages.myorders')->with(['orders' => $orders]);
+    }
+
+    public function customer_view_order($id)
+    {
+        $user = Auth::user();
+        $order = Order::with('user', 'carts.food')
+            ->where('id', $id)
+            ->where('user_id', $user->id)
+            ->first();
+
+        // return $order;
+        return view('layouts.frontend.pages.myorder')->with(['order' => $order]);
+    }
 }
